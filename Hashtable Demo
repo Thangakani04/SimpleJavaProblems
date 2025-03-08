@@ -1,0 +1,72 @@
+package JavaCollectionFramework;
+
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class HashTableDemo {
+
+	public static void main(String[] args) {
+		
+		Hashtable ht = new Hashtable();  //By default the capacity is 11 and load factor is 0.75
+		
+		//If we want to configure capacity and load factor
+		
+		//Hashtable hh = new Hashtable(initial capacity);  //create hashtable object with some capacity
+		//Hashtable hh = new Hashtable(initial capacity , fill ratio/load factor);
+		
+		Hashtable<Integer,String> hob = new Hashtable<Integer,String>();
+		
+		hob.put(101, "Kani");
+		hob.put(102, "Thangam");
+		hob.put(103, "Saras");
+	//	hob.put(104, null);
+		
+		System.out.println(hob);
+		
+		System.out.println(hob.get(102));
+		
+		hob.remove(103);
+		System.out.println(hob);
+		
+		System.out.println(hob.containsKey(101));  // return true or false
+		System.out.println(hob.containsKey(103));
+		System.out.println(hob.containsValue("Kani"));
+		System.out.println(hob.containsValue("Kavi"));
+		
+		System.out.println(hob.isEmpty());
+		
+		//retrive all the keys from hashtable
+		System.out.println(hob.keySet());  // return all the keys from hashtable
+		
+		System.out.println(hob.values());  // return all the values from hashtable
+		
+		//read individual keys and values
+		
+		for(int k :  hob.keySet()) {
+			
+			System.out.println( k + " " + hob.get(k));
+		}
+		
+		//Entry specific methods
+		
+		for(Map.Entry entry :hob.entrySet()) {
+			System.out.println(entry.getKey() + " " + entry.getValue());
+		}
+		
+		//Using Iterator 
+		
+		Set s = hob.entrySet();
+		
+	Iterator its = 	s.iterator();
+	
+	while (its.hasNext()) {
+		
+		Map.Entry entry =(Entry) its.next();
+		System.out.println(entry.getKey() +" " + entry.getValue());
+	}
+
+}
+}
