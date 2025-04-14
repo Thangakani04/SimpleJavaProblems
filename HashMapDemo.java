@@ -25,6 +25,8 @@ public class HashMapDemo {
 		m.put(103, "Nivetha");  //It will replace Nivi
 		m.put(106, "Loga");
 		
+	//	m.getOrDefault(m, null)
+		
 		
 		System.out.println(m);
 		
@@ -85,6 +87,15 @@ public class HashMapDemo {
 			
 			System.out.println(entry.getKey() + "    " + entry.getValue());
 		}
+		
+		System.out.println("Check");
+		//System.out.println(m.keySet());
+		
+		for(Object obj :m.keySet()) {
+			System.out.println( obj +"   " + m.get(obj));
+		}
+		
+		
 
 	}
 
